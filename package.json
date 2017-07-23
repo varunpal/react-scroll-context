@@ -17,10 +17,11 @@
     "scroll-context",
     "child-scroll",
     "body",
-    "disable scroll"
+    "disable scroll",
+    "dropdown scroll"
   ],
   "author": "Varun Pal",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/varunpal/react-scroll-context/issues"
   },
