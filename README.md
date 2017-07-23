@@ -32,3 +32,7 @@ function Component(props) {
   );
 }
 ```
+
+## License
+
+MIT
