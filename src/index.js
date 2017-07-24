@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 
 class ScrollContext extends Component {
-    constructor(props: Props) {
+    constructor(props) {
         super(props);
-        if (typeof window !== 'undefined') {
-            if (this.props.enable) {
+        this.checkScroll(this.props.enable);
+    }
+
+    checkScroll(isEnabled) {
+       if (typeof window !== 'undefined') {
+            if (isEnabled === true) {
                 this.disableBodyScroll();
-            } else {
+            } else if (isEnabled === false) {
                 this.enableBodyScroll();
             }
-        }
+        } 
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.enable) {
-            this.disableBodyScroll();
-        } else {
-            this.enableBodyScroll();
-        }
+        this.checkScroll(nextProps.enable);
     }
 
     disableBodyScroll = () => {
