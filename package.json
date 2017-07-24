@@ -1,6 +1,6 @@
 {
   "name": "react-scroll-context",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A component to disable scroll on document body when its children are scrolled.",
   "main": "lib/index.js",
   "scripts": {
@@ -29,7 +29,7 @@
   "dependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
     "enzyme": "^2.9.1",
-    "react": "^15.6.1"
+    "react": "^15.0.0"
   },
   "devDependencies": {
     "assert": "^1.4.1",
