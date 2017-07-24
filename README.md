@@ -1,7 +1,9 @@
+[![Build Status](https://travis-ci.org/varunpal/react-scroll-context.svg?branch=master)](https://travis-ci.org/varunpal/react-scroll-context) 
+[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/react-scroll-context)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # react-scroll-context
 A component to disable scroll on document body when its children are scrolled.
-
-[![Build Status](https://travis-ci.org/varunpal/react-scroll-context.svg?branch=master)](https://travis-ci.org/varunpal/react-scroll-context)
 
 ## Install
 ```node
