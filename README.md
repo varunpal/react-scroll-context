@@ -15,9 +15,9 @@ npm install react-scroll-context --save
 
 ### Props
 1. ```enable: boolean``` set this to true if you want to manually disable scroll.
-Eg:
-- ```enable: true``` Enables scroll context and prevents scroll on document body.
-- ```enable: false``` Disables scrolls context and allows scroll on document body.
+  Eg:
+    - ```enable: true``` Enables scroll context and prevents scroll on document body.
+    - ```enable: false``` Disables scrolls context and allows scroll on document body.
 2. ```styles: string ``` String of classNames to be added to the parent container.
 
 ### Help
