@@ -18,8 +18,9 @@ npm install react-scroll-context --save
   Eg:
     - ```enable: true``` Enables scroll context and prevents scroll on document body.
     - ```enable: false``` Disables scrolls context and allows scroll on document body.
-  **WARNING** The mouse events will not work if this prop is set to either(true / false).
 2. ```styles: string ``` String of classNames to be added to the parent container.
+
+**WARNING** The mouse events will not work if the `enable` prop is set to either(true / false).
 
 ### Help
 1. Uses mouse listeners for desktop / laptop browsers.
