@@ -21,4 +21,12 @@ describe('ReactScrollContext component', () => {
         wrapper.find('.child').first().simulate('mouseOut');
         assert.strictEqual(document.body.style.overflow, 'auto');
     });
+
+    it('does not trigger mouseEvent when enable prop is set', () => {
+        wrapper.setProps({
+            enable: false,
+        });
+        wrapper.find('.child').first().simulate('mouseOver');
+        assert.strictEqual(document.body.style.overflow, 'auto');
+    });
 });

@@ -7,13 +7,13 @@ class ScrollContext extends Component {
     }
 
     checkScroll(isEnabled) {
-       if (typeof window !== 'undefined') {
+        if (typeof window !== 'undefined') {
             if (isEnabled === true) {
                 this.disableBodyScroll();
             } else if (isEnabled === false) {
                 this.enableBodyScroll();
             }
-        } 
+        }
     }
 
     componentWillReceiveProps(nextProps) {
@@ -34,11 +34,21 @@ class ScrollContext extends Component {
     };
 
     render() {
-        const { styles, children } = this.props;
+        const { styles, children, enable } = this.props;
         return (
             <div
-                onMouseOver={this.disableBodyScroll}
-                onMouseOut={this.enableBodyScroll}
+                onMouseOver={() => {
+                    if (typeof enable === 'boolean') {
+                        return;
+                    }
+                    this.disableBodyScroll();
+                }}
+                onMouseOut={() => {
+                    if (typeof enable === 'boolean') {
+                        return;
+                    }
+                    this.enableBodyScroll();
+                }}
                 className={styles}
             >
                 {children}
