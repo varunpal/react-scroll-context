@@ -20,6 +20,10 @@ class ScrollContext extends Component {
         this.checkScroll(nextProps.enable);
     }
 
+    componentWillUnmount() {
+        this.enableBodyScroll();
+    }
+
     disableBodyScroll = () => {
         const body = window.document.body;
         const margin = window.innerWidth - body.clientWidth;
