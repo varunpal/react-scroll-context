@@ -7,7 +7,13 @@ import ReactScrollContext from '../src';
 const child = <div className="child"></div>;
 
 describe('ReactScrollContext component', () => {
-    const wrapper = mount(<ReactScrollContext>{child}</ReactScrollContext>);
+    let wrapper;
+    beforeEach(() => {
+        wrapper = mount(<ReactScrollContext>{child}</ReactScrollContext>);
+        document.body.style.overflow = 'auto';
+        document.body.style.marginRight = '0px';
+    });
+
     it('renders children', () => {
         assert.strictEqual(wrapper.find('.child').length, 1);
     });
@@ -18,15 +24,24 @@ describe('ReactScrollContext component', () => {
     });
 
     it('allows scroll when users mouse hovers over container', () => {
+        wrapper.find('.child').first().simulate('mouseOver');
         wrapper.find('.child').first().simulate('mouseOut');
         assert.strictEqual(document.body.style.overflow, 'auto');
     });
 
-    it('does not trigger mouseEvent when enable prop is set', () => {
-        wrapper.setProps({
-            enable: false,
-        });
+    it('enables scroll again when it is unmounted', () => {
         wrapper.find('.child').first().simulate('mouseOver');
+        wrapper.unmount();
         assert.strictEqual(document.body.style.overflow, 'auto');
+    });
+
+    describe('when enable prop is set', () => {
+        it('does not trigger mouseEvent', () => {
+            wrapper.setProps({
+                enable: false,
+            });
+            wrapper.find('.child').first().simulate('mouseOver');
+            assert.strictEqual(document.body.style.overflow, 'auto');
+        });
     });
 });
