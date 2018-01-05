@@ -47,8 +47,8 @@ class ScrollContext extends Component {
                     }
                     this.disableBodyScroll();
                 }}
-                onMouseOut={() => {
-                    if (typeof enable === 'boolean') {
+                onMouseOut={(e) => {
+                    if (typeof enable === 'boolean' || e.currentTarget.contains(e.relatedTarget)) {
                         return;
                     }
                     this.enableBodyScroll();
